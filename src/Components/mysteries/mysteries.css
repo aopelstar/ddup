@@ -1,0 +1,231 @@
+.mystery-component{
+    background-color: var(--lightgray);
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+}
+
+.mystery-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+    
+}
+
+.mystery-hype-copy-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    background-color: var(--lightgrey);
+}
+
+.mystery-hype-copy-container>div{
+    margin-top: 15px;
+}
+
+.mystery-hype-title{
+    font-family: apertura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4vw;
+}
+
+.mystery-hype-copy{
+    font-family: omnes-cond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.mystery-navigation-container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 80%;
+    border-bottom: 1px solid var(--gunmetal)
+}
+
+.mystery-navigation-title{
+    margin: auto;
+    font-family: apertura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4vw;
+}
+
+
+.mystery-navigation{
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: omnes-cond, sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    width: 100%;
+}
+
+.mystery-navigation>div{
+    margin:auto;
+    font-family: omnes-cond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.murder-mystery-grid-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.individual-mystery-container{
+    margin: 10px auto;
+    display: flex;
+    width: 80%;
+    border-bottom: 1px solid var(--red)
+}
+
+.mystery-head-logo{
+    width:80px;
+    height:80px;
+    margin-right: 20px;
+}
+
+.mystery-description-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.mystery-title{
+    margin: 0px auto;
+    font-family: apertura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.mystery-description{
+    font-family: omnes-cond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 2px auto;
+    padding: 4px;
+    border: solid 1px var(--gunmetal);
+    background-color: var(--gray);
+    width: 200px;
+}
+
+.mystery-data-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 5px;
+    font-family: apertura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size:3vw;
+}
+
+
+/*ipad sizing */
+
+@media(min-width: 750px){
+    .mystery-hype-copy-container{
+        width: 70%;
+    }
+
+    .mystery-hype-title{
+        font-size: 5vw;
+    }
+
+    .mystery-hype-copy{
+        font-size: 3vw;
+    }
+
+    .mystery-navigation-container{
+        margin-top: 30px;
+    }
+
+    .mystery-navigation{
+        font-size: 3vw;
+    }
+
+    .individual-mystery-container{
+        width: 70%;
+        margin-top: 30px;
+        justify-content: space-between;
+    }
+
+    .mystery-head-logo{
+        height: 110px;
+        width: 110px;
+    }
+
+    .mystery-title{
+        font-size: 4vw;
+    }
+
+    .mystery-description{
+        width: 350px;
+    }
+
+    .mystery-data-container{
+        font-size: 3vw;
+    }
+}
+
+/* Monitor sizing */
+@media(min-width:1100px){
+
+    .mystery-component{
+        background-color: var(--gunmetal);
+    }
+
+    .mystery-container{
+        background-color: var(--lightgray);
+        width: 80%;
+        margin: 0 10%;
+    }
+    .mystery-hype-copy-container{
+        margin: 75px auto;
+        width: 95%
+    }
+
+    .mystery-hype-title{
+        font-size: 4vw;
+        margin-bottom: 20px;
+    }
+
+    .mystery-hype-copy{
+        font-size: 2.5vw;
+    }
+
+    .mystery-navigation-container{
+        width: 90%;
+    }
+
+    .mystery-navigation-title{
+        font-size: 3vw;
+    }
+
+    .mystery-head-logo{
+        height: 180px;
+        width: 180px;
+    }
+
+    .murder-mystery-grid-container{
+        width: 100%;
+    }
+
+    .mystery-title{
+        font-size: 2.5vw;
+    }
+
+    .mystery-description{
+        font-size: 2vw;
+        width: 450px;
+    }
+
+    .mystery-data-container{
+        font-size: 2vw;
+    }
+}
+

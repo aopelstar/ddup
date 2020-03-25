@@ -1,0 +1,41 @@
+.about-component {
+    background-color: var(--lightgray);
+    min-height:100vh;
+    height: auto;
+    width: 100vw;
+    padding-bottom: 10px;
+}
+
+.about-brand-video-container{
+    width: 100vw;
+}
+
+iframe{
+    width: 100vw;
+    height: 400px;
+}
+
+.about-mission-container{
+    width: 75vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.about-title{
+    font-family: apertura, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    width: 100%;
+    margin: auto;
+    font-size: 6vw;
+    color: var(--gunmetal);
+}
+
+.about-copy{
+    font-family: omnes-cond, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
