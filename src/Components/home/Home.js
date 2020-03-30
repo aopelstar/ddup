@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './home.css';
 import Death from '../../assets/Death-Digital.png';
-import logo from '../../assets/DDUP-Word-Logo-Red-Digital.png'
+import logo from '../../assets/logo-red.png'
 
 
 export default class Home extends Component{

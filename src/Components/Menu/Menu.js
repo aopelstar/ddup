@@ -37,7 +37,8 @@ export default class Menu extends Component {
                             <div onClick = {() => this.displayChange()}><Link to = '/login'>Login</Link></div>
                             <div onClick = {() => this.displayChange()}><Link to = '/account'>Account</Link></div>
                             <div onClick = {() => this.displayChange()}><Link to = '/contact'>Contact Us</Link></div>
-                            <div onClick = {() => this.displayChange()}><Link to = 'faq'>FAQ</Link></div>
+                            <div onClick = {() => this.displayChange()}><Link to = '/faq'>FAQ</Link></div>
+                            <div onClick = {() => this.displayChange()}><Link to = '/cart'>Cart</Link></div>
                         </div>
                     </div>
                 </div>

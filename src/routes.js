@@ -8,6 +8,7 @@ import Login from './Components/login/Login.js';
 import Account from './Components/account/Account.js';
 import Contact from './Components/contact/Contact.js';
 import FAQ from './Components/FAQ/Faq.js';
+import Cart from './Components/cart/Cart.js'
 
 export default(
     <HashRouter>

@@ -9,11 +9,12 @@
 .home-container{
     display: flex;
     flex-direction: column;
+    
 
 }
 .home-image-container, .home-info-container{
     width: 100%;
-    margin: auto;
+    margin: 30px auto 0 auto;
 }
 
 .death-icon{
@@ -43,13 +44,34 @@
 /*monitor size */
 
 @media(min-width:1100px){
+    .home-component{
+        background-color: var(--gunmetal);
+    }
+
+    .home-container{
+        background-color: var(--lightgray);
+        width: 80%;
+        margin: 0 10%;
+        height: 100vh;
+    }
+    .home-brand-video-container{
+        width: 100%;
+    }
     .home-container{
         flex-direction: row;
+        justify-content: space-evenly;
+        padding: 0 10px
+
     }
 
     .death-icon, .home-logo-icon{
-        height: 400px;
+        height: 350px;
         width: auto;
-        margin-top: 120px;
+        margin: 60px auto;
+    }
+
+    .home-image-container, .home-info-container{
+        width: 100%;
+        margin: 60px auto;
     }
 }

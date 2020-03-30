@@ -8,7 +8,7 @@ export default class Mysteries extends Component {
     constructor() {
         super()
         this.state = {
-            mysteries: {}
+            mysteries: []
         }
     }
 
@@ -16,13 +16,82 @@ export default class Mysteries extends Component {
         let promise = axios.get('http://localhost:7331/api/mysteries')
         promise.then((response) => {
             this.setState({
-                mysteries: response.data
+                mysteries: response.data,
+                size: false,
+                price: false,
+                alpha: false
             })
         })
 
     }
 
+    mysterySort(key){
+        if (key === "size"){
+            let stateSize = this.state.mysteries.sort( (a,b) => {
+                if(a.mystery_quantity<b.mystery_quantity){
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+            this.setState({
+                mysteries: stateSize,
+                size: true,
+                price: false,
+                alpha: false
+            })
+        } else if ( key ==="price"){
+            let price = this.state.mysteries.sort( (a,b) => {
+                if(a.mystery_price>b.mystery_price){
+                    return 1
+                } else {
+                    return -1
+                }
+            })
+            this.setState({
+                mysteries: price,
+                size: false,
+                price: true,
+                alpha: false
+            })
+        } else if( key === "alpha"){
+            let alphabet = this.state.mysteries.sort((a,b)=>{
+                if( a.mystery_name>b.mystery_name){
+                    return 1
+                } else{
+                    return -1
+                }
+            })
+            this.setState({
+                mysteries: alphabet,
+                size: false,
+                price: false,
+                alpha: true
+            })
+        }
+    }
+
     render() {
+        let mysteries = this.state.mysteries.map( (e,i) =>{
+            return(
+                <div className="individual-mystery-container" key ={i}>
+                            <div className="mystery-logo-container">
+                                <div className="mystery-logo">
+                                    <img src={e.mystery_logo} alt="slaughter" className="mystery-head-logo" />
+                                </div>
+                            </div>
+
+                            <div className="mystery-description-container">
+                                <div className="mystery-title">{e.mystery_name}</div>
+                                <div className="mystery-description">{e.mystery_description} </div>
+                                <div className="mystery-data-container">
+                                    <div className="mystery-quantity">Party Size: {e.mystery_quantity} guests</div>
+                                    <div className="mystery-price">Price: ${e.mystery_price}.00</div>
+                                </div>
+                            </div>
+                        </div>
+            )
+        })
         return (
             <div className="mystery-component">
                 <div className="mystery-container">
@@ -37,63 +106,16 @@ export default class Mysteries extends Component {
                             Sort By:
                             </div>
                         <div className="mystery-navigation">
-                            <div>Quantity</div>
-                            <div>Price</div>
-                            <div>Alphabetical</div>
+                            <div className={this.state.size?"nav-true":"mystery-nav-size"} onClick = {() => this.mysterySort("size")}>Party Size</div>
+                            <div className={this.state.price?"nav-true":"mystery-nav-size"} onClick = {() => this.mysterySort("price")}>Price</div>
+                            <div className={this.state.alpha?"nav-true":"mystery-nav-size"} onClick = {() => this.mysterySort("alpha")}>Alphabetical</div>
                         </div>
                     </div>
                     <div className="murder-mystery-grid-container">
-                        <div className="individual-mystery-container">
-                            <div className="mystery-logo-container">
-                                <div className="mystery-logo">
-                                    <img src={Head} alt="slaughter" className="mystery-head-logo" />
-                                </div>
-                            </div>
-
-                            <div className="mystery-description-container">
-                                <div className="mystery-title">Moorhead Mount</div>
-                                <div className="mystery-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo ultrices orci, at dignissim sapien vulputate sed. Nunc quis lacus eget metus blandit commodo. Fusce vitae tempor augue, ac mollis odio. </div>
-                                <div className="mystery-data-container">
-                                    <div className="mystery-quantity">Quantity: 200</div>
-                                    <div className="mystery-price">Price: 200</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="individual-mystery-container">
-                            <div className="mystery-logo-container">
-                                <div className="mystery-logo">
-                                    <img src={Slaughter} alt="slaughter" className="mystery-head-logo" />
-                                </div>
-                            </div>
-
-                            <div className="mystery-description-container">
-                                <div className="mystery-title">Summer Slaughter of 98</div>
-                                <div className="mystery-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo ultrices orci, at dignissim sapien vulputate sed. Nunc quis lacus eget metus blandit commodo. Fusce vitae tempor augue, ac mollis odio. </div>
-                                <div className="mystery-data-container">
-                                    <div className="mystery-quantity">Quantity: 200</div>
-                                    <div className="mystery-price">Price: 200</div>
-                                </div>
-                            </div>
-                        </div>
+                        { mysteries }
                     </div>
                 </div>
             </div>
         )
     }
-    // <div className="individual-mystery-container">
-    //                         <div className="mystery-logo-container">
-    //                             <div className="mystery-logo">
-    //                                 <img src={Head} alt="slaughter" className="mystery-head-logo" />
-    //                             </div>
-    //                         </div>
-
-    //                         <div className="mystery-description-container">
-    //                             <div className="mystery-title">Moorhead Mount</div>
-    //                             <div className="mystery-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo ultrices orci, at dignissim sapien vulputate sed. Nunc quis lacus eget metus blandit commodo. Fusce vitae tempor augue, ac mollis odio. </div>
-    //                             <div className="mystery-data-container">
-    //                                 <div className="mystery-quantity">Quantity: 200</div>
-    //                                 <div className="mystery-price">Price: 200</div>
-    //                             </div>
-    //                         </div>
-    //                     </div>
 }
