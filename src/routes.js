@@ -21,6 +21,7 @@ export default(
             <Route path = '/account' component = { Account } />
             <Route path = '/contact' component = { Contact } />
             <Route path = '/faq' component = { FAQ } />
+            <Route path = '/cart' component = { Cart } />
         </Switch>
     </HashRouter>
 )

@@ -79,6 +79,26 @@
     font-weight: 400;
 }
 
+.mystery-logo-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mystery-button-container{
+    font-family: omnes-cond, sans-serif;
+}
+
+.mystery-button{
+    background-color: var(--red);
+    width: 80px;
+    height: 25px;
+    font-weight: 800;
+    border: solid var(--gunmetal) 1px;
+    margin: 5px 0;
+    font-size: 2.75vw;
+    border-radius: 3px;
+}
+
 .murder-mystery-grid-container{
     display: flex;
     flex-direction: column;
@@ -102,6 +122,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
+    padding-bottom: 30px;
 }
 
 .mystery-title{
@@ -115,7 +136,7 @@
     font-family: omnes-cond, sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin: 2px auto;
+    margin: 10px auto;
     padding: 4px;
     border: solid 1px var(--gunmetal);
     background-color: var(--gray);
@@ -167,16 +188,27 @@
         width: 110px;
     }
 
+    .mystery-button{
+        width: 110px;
+        height: 50px;
+        font-size: 2vw;
+    }
+
     .mystery-title{
         font-size: 4vw;
     }
 
     .mystery-description{
         width: 350px;
+        font-size: 3.5vw;
     }
 
     .mystery-data-container{
         font-size: 3vw;
+    }
+
+    .mystery-description-container{
+        padding-bottom: 40px;
     }
 }
 
@@ -229,7 +261,7 @@
 
     .mystery-description{
         font-size: 2vw;
-        width: 450px;
+        width: 400px;
     }
 
     .mystery-data-container{
@@ -238,6 +270,17 @@
 
     .individual-mystery-container{
         padding-bottom: 40px;
+    }
+
+    .mystery-button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .mystery-button{
+        width: 75px;
+        font-size: 1vw;
     }
 }
 

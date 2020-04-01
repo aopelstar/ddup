@@ -15,7 +15,7 @@ export default class About extends Component {
                 <div className = "about-container">
 
                 <div className = "about-brand-video-container">
-                <iframe src="https://www.youtube.com/embed/nBJ1BSbl3SU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nBJ1BSbl3SU" frameborder="0" title="whatever" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div className = "about-mission-container">
                     <h2 className = "about-title">Welcome, ya bitch</h2>

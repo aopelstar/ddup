@@ -17,7 +17,7 @@ export default class Ded extends Component{
                 <div className = "ded-container">
 
                 <div className = "ded-brand-video-container">
-                <iframe src="https://www.youtube.com/embed/nBJ1BSbl3SU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nBJ1BSbl3SU" frameborder="0" title="whatever" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div className = "ded-mission-container">
                     <h2 className = "ded-title">ded.</h2>

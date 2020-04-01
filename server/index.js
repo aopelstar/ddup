@@ -34,5 +34,4 @@ async function readMysteries(){
     } catch (e){
         return e;
     }
-    client.end();
 }
