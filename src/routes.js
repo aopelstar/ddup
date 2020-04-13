@@ -9,6 +9,7 @@ import Account from './Components/account/Account.js';
 import Contact from './Components/contact/Contact.js';
 import FAQ from './Components/FAQ/Faq.js';
 import Cart from './Components/cart/Cart.js'
+import Learn from './Components/learn/Learn.js'
 
 export default(
     <HashRouter>
@@ -22,6 +23,7 @@ export default(
             <Route path = '/contact' component = { Contact } />
             <Route path = '/faq' component = { FAQ } />
             <Route path = '/cart' component = { Cart } />
+            <Route path = '/learn/:id' component = { Learn } />
         </Switch>
     </HashRouter>
 )

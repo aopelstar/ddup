@@ -1,0 +1,13 @@
+.learn-component{
+    background-color: var(--lightgray);
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+}
+
+.learn-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%
+    
+}

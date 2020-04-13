@@ -69,6 +69,12 @@ export default class Mysteries extends Component {
         }
     }
 
+    learn(something){
+        console.log('what up');
+        this.props.history.push(`/learn/${something}`)
+
+    }
+
     render() {
         let mysteries = this.state.mysteries.map((e, i) => {
             return (
@@ -78,7 +84,7 @@ export default class Mysteries extends Component {
                             <img src={e.mystery_logo} alt="slaughter" className="mystery-head-logo" />
                         </div>
                         <div className="mystery-button-container">
-                            <div><button className="mystery-button">Learn More</button></div>
+                            <div><button className="mystery-button" onClick={() => this.learn(e.mystery_id)}>Learn More</button></div>
                             <div><button className="mystery-button">Add To Cart</button></div>
                         </div>
                     </div>

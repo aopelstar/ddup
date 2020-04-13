@@ -19,11 +19,12 @@ app.get('/api/mysteries', async (req,res) =>{
     res.send(rows)
 })
 
-const port = process.env.SERVER_PORT || 7331
-
-app.listen( port, () => {
-    console.log(`listening on port ${port}`);
+app.get('/api/learn/:id', async (req, res) =>{
+    let id = req.params.id;
+    const rows = await specificMystery(id);
+    res.status(200).send(rows);
 })
+
 
 
 async function readMysteries(){
@@ -35,3 +36,22 @@ async function readMysteries(){
         return e;
     }
 }
+
+async function specificMystery(id){
+
+    const text = 'select * from mysteries where mystery_id = $1'
+    const values = [id];
+    try{
+        client.connect();
+        const results = await client.query(text, values)
+        return results.rows[0]
+        
+    } catch(e){
+        return e.stack
+    }
+}
+const port = process.env.SERVER_PORT || 7331
+
+app.listen( port, () => {
+    console.log(`listening on port ${port}`);
+})
