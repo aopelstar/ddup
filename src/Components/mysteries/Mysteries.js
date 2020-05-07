@@ -70,7 +70,6 @@ export default class Mysteries extends Component {
     }
 
     learn(something){
-        console.log('what up');
         this.props.history.push(`/learn/${something}`)
 
     }

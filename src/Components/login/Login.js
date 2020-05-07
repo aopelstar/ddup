@@ -11,8 +11,16 @@ export default class Login extends Component {
 
     render(){
         return(
-            <div>
-                
+            <div className="login-component">
+                <div className="login-container">
+                    <div className="login-title">
+                        Login
+                    </div>
+                    <div className="login-fields">
+                        <div><input/></div>
+                        <div><input/></div>
+                    </div>
+                </div>
             </div>
         )
     }

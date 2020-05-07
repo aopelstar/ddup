@@ -42,7 +42,6 @@ async function specificMystery(id){
     const text = 'select * from mysteries where mystery_id = $1'
     const values = [id];
     try{
-        client.connect();
         const results = await client.query(text, values)
         return results.rows[0]
         

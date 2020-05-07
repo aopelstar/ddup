@@ -82,6 +82,7 @@
 .mystery-logo-container{
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .mystery-button-container{
@@ -130,6 +131,7 @@
     font-family: apertura, sans-serif;
     font-weight: 700;
     font-style: normal;
+    text-align: center;
 }
 
 .mystery-description{
@@ -249,6 +251,7 @@
     .mystery-head-logo{
         height: 180px;
         width: 180px;
+        margin: 0 auto;
     }
 
     .murder-mystery-grid-container{
@@ -257,6 +260,7 @@
 
     .mystery-title{
         font-size: 2.5vw;
+        flex-wrap: wrap;
     }
 
     .mystery-description{
@@ -281,6 +285,10 @@
     .mystery-button{
         width: 75px;
         font-size: 1vw;
+    }
+
+    .mystery-description-container{
+        width: 400px;
     }
 }
 
