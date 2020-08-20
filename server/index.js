@@ -1,56 +1,60 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Client } = require('pg');
 const cors = require('cors');
-const controller = require('./controller/getMysteries.js')
+const controller = require('./controller/getMysteries.js');
+const passport = require('passport');
+const Auth0Strategy = require('passport-auth0');
+const massive = require('massive');
+
 require('dotenv').config();
+
 
 const app = express();
 app.use( bodyParser.json() );
 app.use( cors() );
 
-const client = new Client({
-    connectionString: process.env.PG_CONNECT,
-    ssl: true
-});
+massive(process.env.CONNECTION_STRING).then(db => {
+    app.set('db', db)
+    }).catch(function(err) {
+        console.log('error: ', err);
+    });;
+//authentication bb
+// app.use(passport.initialize() );
+// app.use(passport.session() );
 
-app.get('/api/mysteries', async (req,res) =>{
-    const rows = await readMysteries();
-    res.send(rows)
-})
+// passport.use(new Auth0Strategy({
+//     domain: process.env.AUTH_DOMAIN,
+//     clientID: process.env.AUTH_CLIENT_ID,
+//     clientSecret: process.env.AUTHCLIENT_SECRET,
+//     callbackURL: process.env.AUTH_CALLBACK_URL,
+//     scope: 'openid profile'
+// }, function(accessToken, refreshToken, extraParams, profile, done) {
+//     let { user_id } = profile;
+    
+//     app.get()
+// }))
 
-app.get('/api/learn/:id', async (req, res) =>{
-    let id = req.params.id;
-    const rows = await specificMystery(id);
-    res.status(200).send(rows);
-})
+// passport.serializeUser((id, done) => {
+//     return done(null, id);
+// })
+// passport.deserializeUser((id, done) =>{
+//     app.get()
+// })
+
+
+// app.get('/auth', passport.authenticate('auth0'));
 
 
 
-async function readMysteries(){
-    try{
-        client.connect();
-        const results = await client.query("select * from mysteries")
-        return results.rows
-    } catch (e){
-        return e;
-    }
-}
 
-async function specificMystery(id){
 
-    const text = 'select * from mysteries where mystery_id = $1'
-    const values = [id];
-    try{
-        const results = await client.query(text, values)
-        return results.rows[0]
-        
-    } catch(e){
-        return e.stack
-    }
-}
+
+
+app.get('/api/mysteries', controller.mysteries)
+
+
 const port = process.env.SERVER_PORT || 7331
-
+ 
 app.listen( port, () => {
     console.log(`listening on port ${port}`);
 })
